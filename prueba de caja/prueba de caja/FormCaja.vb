@@ -1,28 +1,36 @@
-﻿Public Class FormCaja
+﻿Imports ClosedXML.Excel
+
+Public Class FormCaja
+
     ' Lista para almacenar los productos en la venta actual
     Private ventaActual As New List(Of String)
     Private totalVenta As Decimal = 0
 
     Private Sub FormCaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarProductos()
+        CargarProductosDesdeExcel()
     End Sub
 
-    ' Método para cargar los productos desde el archivo productos.txt
-    Private Sub CargarProductos()
-        Dim rutaArchivo As String = "productos.txt"
+    ' Método para cargar los productos desde el archivo productos.xlsx
+    Private Sub CargarProductosDesdeExcel()
+        Dim rutaArchivo As String = "productos.xlsx"
 
-        If System.IO.File.Exists(rutaArchivo) Then
-            Dim productos As String() = System.IO.File.ReadAllLines(rutaArchivo)
-            ListBoxProductos.Items.Clear()
-
-            For Each producto As String In productos
-                Dim partes As String() = producto.Split(New String() {" - "}, StringSplitOptions.None)
-                Dim nombreProducto As String = partes(0)
-                ListBoxProductos.Items.Add(nombreProducto)
-            Next
-        Else
+        If Not System.IO.File.Exists(rutaArchivo) Then
             MessageBox.Show("El archivo de productos no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         End If
+
+        ListBoxProductos.Items.Clear()
+
+        Using workbook As New XLWorkbook(rutaArchivo)
+            Dim hoja As IXLWorksheet = workbook.Worksheet(1)
+
+            For Each fila As IXLRow In hoja.RowsUsed().Skip(1)
+                Dim nombre As String = fila.Cell(1).Value.ToString()
+                Dim precio As Decimal = Decimal.Parse(fila.Cell(2).Value.ToString())
+                Dim stock As Integer = Integer.Parse(fila.Cell(3).Value.ToString())
+                ListBoxProductos.Items.Add($"{nombre} - {precio}$ - {stock}")
+            Next
+        End Using
     End Sub
 
     ' Método para agregar un producto a la venta actual
@@ -32,39 +40,32 @@
             Return
         End If
 
-        Dim productoSeleccionado As String = ListBoxProductos.SelectedItem.ToString()
+        Dim productoSeleccionado As String = ListBoxProductos.SelectedItem.ToString().Split(" - ")(0)
         Dim cantidad As Integer
 
-        ' Validar que la cantidad sea un número válido
         If Integer.TryParse(txtCantidad.Text, cantidad) AndAlso cantidad > 0 Then
-            ' Obtener el precio y el stock del producto seleccionado
-            Dim rutaArchivo As String = "productos.txt"
-            Dim productos As String() = System.IO.File.ReadAllLines(rutaArchivo)
+            Dim rutaArchivo As String = "productos.xlsx"
 
-            For Each producto As String In productos
-                Dim partes As String() = producto.Split(New String() {" - "}, StringSplitOptions.None)
-                If partes(0) = productoSeleccionado Then
-                    Dim precio As Decimal = Decimal.Parse(partes(1).TrimEnd("$"c))
-                    Dim stock As Integer = Integer.Parse(partes(2))
+            Using workbook As New XLWorkbook(rutaArchivo)
+                Dim hoja As IXLWorksheet = workbook.Worksheet(1)
 
-                    ' Verificar que haya suficiente stock
-                    If stock >= cantidad Then
-                        ' Agregar el producto a la venta actual
-                        ventaActual.Add($"{productoSeleccionado} - {cantidad}")
-                        ListBoxVenta.Items.Add($"{productoSeleccionado} x {cantidad} - ${precio * cantidad}")
+                For Each filaProducto As IXLRow In hoja.RowsUsed().Skip(1)
+                    If filaProducto.Cell(1).Value.ToString() = productoSeleccionado Then
+                        Dim precio As Decimal = Decimal.Parse(filaProducto.Cell(2).Value.ToString())
+                        Dim stock As Integer = Integer.Parse(filaProducto.Cell(3).Value.ToString())
 
-                        ' Actualizar el total de la venta
-                        totalVenta += precio * cantidad
-                        ListBoxVenta.Text = totalVenta.ToString("C")
-
-                        ' Limpiar el TextBox de cantidad
-                        txtCantidad.Clear()
-                    Else
-                        MessageBox.Show("No hay suficiente stock para este producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        If stock >= cantidad Then
+                            ventaActual.Add($"{productoSeleccionado} - {cantidad}")
+                            ListBoxVenta.Items.Add($"{productoSeleccionado} x {cantidad} - ${precio * cantidad}")
+                            totalVenta += precio * cantidad
+                            Label_Total.Text = totalVenta.ToString("C")
+                        Else
+                            MessageBox.Show("No hay suficiente stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                        Exit For
                     End If
-                    Exit For
-                End If
-            Next
+                Next
+            End Using
         Else
             MessageBox.Show("Ingresa una cantidad válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -77,36 +78,72 @@
             Return
         End If
 
-        ' Actualizar el archivo productos.txt
-        Dim rutaArchivo As String = "productos.txt"
-        Dim productos As List(Of String) = System.IO.File.ReadAllLines(rutaArchivo).ToList()
+        Dim rutaArchivo As String = "productos.xlsx"
+
+        ' Actualizar stock en productos.xlsx
+        Using workbook As New XLWorkbook(rutaArchivo)
+            Dim hoja As IXLWorksheet = workbook.Worksheet(1)
+
+            For Each item In ventaActual
+                Dim partes As String() = item.Split(" - ")
+                Dim nombreProducto As String = partes(0)
+                Dim cantidadVendida As Integer = Integer.Parse(partes(1))
+
+                For Each filaProducto As IXLRow In hoja.RowsUsed().Skip(1)
+                    If filaProducto.Cell(1).Value.ToString() = nombreProducto Then
+                        Dim stockActual As Integer = Integer.Parse(filaProducto.Cell(3).Value.ToString())
+                        filaProducto.Cell(3).Value = stockActual - cantidadVendida
+                        Exit For
+                    End If
+                Next
+            Next
+
+            workbook.Save()
+        End Using
+
+        Dim rutaVentas As String = "ventas.xlsx"
+        Dim workbookVentas As XLWorkbook
+        Dim hojaVentas As IXLWorksheet
+
+        If System.IO.File.Exists(rutaVentas) Then
+            workbookVentas = New XLWorkbook(rutaVentas)
+            hojaVentas = workbookVentas.Worksheet(1)
+        Else
+            workbookVentas = New XLWorkbook()
+            hojaVentas = workbookVentas.Worksheets.Add("Ventas")
+            hojaVentas.Cell(1, 1).Value = "Producto"
+            hojaVentas.Cell(1, 2).Value = "Cantidad"
+            hojaVentas.Cell(1, 3).Value = "Total"
+        End If
+
+        ' Evitar error si el archivo está vacío
+        Dim fila As Integer
+        If hojaVentas.LastRowUsed() IsNot Nothing Then
+            fila = hojaVentas.LastRowUsed().RowNumber() + 1
+        Else
+            fila = 2
+            hojaVentas.Cell(1, 1).Value = "Producto"
+            hojaVentas.Cell(1, 2).Value = "Cantidad"
+            hojaVentas.Cell(1, 3).Value = "Total"
+        End If
 
         For Each item In ventaActual
-            Dim partes As String() = item.Split(New String() {" - "}, StringSplitOptions.None)
-            Dim producto As String = partes(0)
-            Dim cantidad As Integer = Integer.Parse(partes(1))
-
-            ' Buscar el producto en la lista y actualizar el stock
-            For i As Integer = 0 To productos.Count - 1
-                Dim partesProducto As String() = productos(i).Split(New String() {" - "}, StringSplitOptions.None)
-                If partesProducto(0) = producto Then
-                    Dim stockActual As Integer = Integer.Parse(partesProducto(2))
-                    productos(i) = $"{producto} - {partesProducto(1)} - {stockActual - cantidad}"
-                    Exit For
-                End If
-            Next
+            Dim partes As String() = item.Split(" - ")
+            hojaVentas.Cell(fila, 1).Value = partes(0)
+            hojaVentas.Cell(fila, 2).Value = partes(1)
+            fila += 1
         Next
 
-        ' Guardar los cambios en el archivo
-        System.IO.File.WriteAllLines(rutaArchivo, productos)
+        workbookVentas.SaveAs(rutaVentas)
+        workbookVentas.Dispose()
 
-        ' Limpiar la venta actual
         ventaActual.Clear()
         ListBoxVenta.Items.Clear()
         totalVenta = 0
-        ListBoxVenta.Text = "$0.00"
+        Label_Total.Text = "$0.00"
 
         MessageBox.Show("Venta finalizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        CargarProductosDesdeExcel()
     End Sub
 
     ' Método para regresar al menú principal
@@ -114,4 +151,5 @@
         Me.Close()
         Form1.Show()
     End Sub
+
 End Class

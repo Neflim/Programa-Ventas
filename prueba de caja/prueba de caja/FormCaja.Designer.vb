@@ -28,7 +28,7 @@ Partial Class FormCaja
         ListBoxVenta = New ListBox()
         Button_FinalizarVenta = New Button()
         Button_Regresar = New Button()
-        lblTotal = New Label()
+        Label_Total = New Label()
         SuspendLayout()
         ' 
         ' ListBoxProductos
@@ -46,7 +46,6 @@ Partial Class FormCaja
         txtCantidad.Name = "txtCantidad"
         txtCantidad.Size = New Size(100, 23)
         txtCantidad.TabIndex = 1
-        txtCantidad.Text = "Cantidad"
         ' 
         ' Button_Agregar
         ' 
@@ -84,21 +83,21 @@ Partial Class FormCaja
         Button_Regresar.Text = "Volver"
         Button_Regresar.UseVisualStyleBackColor = True
         ' 
-        ' lblTotal
+        ' Label_Total
         ' 
-        lblTotal.Font = New Font("Segoe UI", 15F)
-        lblTotal.Location = New Point(12, 248)
-        lblTotal.Name = "lblTotal"
-        lblTotal.Size = New Size(108, 34)
-        lblTotal.TabIndex = 6
-        lblTotal.Text = "Total Venta"
+        Label_Total.Font = New Font("Segoe UI", 15F)
+        Label_Total.Location = New Point(12, 248)
+        Label_Total.Name = "Label_Total"
+        Label_Total.Size = New Size(108, 34)
+        Label_Total.TabIndex = 6
+        Label_Total.Text = "Total Venta"
         ' 
         ' FormCaja
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
-        Controls.Add(lblTotal)
+        Controls.Add(Label_Total)
         Controls.Add(Button_Regresar)
         Controls.Add(Button_FinalizarVenta)
         Controls.Add(ListBoxVenta)
@@ -117,5 +116,5 @@ Partial Class FormCaja
     Friend WithEvents ListBoxVenta As ListBox
     Friend WithEvents Button_FinalizarVenta As Button
     Friend WithEvents Button_Regresar As Button
-    Friend WithEvents lblTotal As Label
+    Friend WithEvents Label_Total As Label
 End Class

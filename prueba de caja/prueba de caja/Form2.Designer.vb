@@ -28,6 +28,8 @@ Partial Class Form2
         Button_Agregar = New Button()
         txtNuevoProducto = New TextBox()
         Button_Borrar = New Button()
+        txtPrecio = New TextBox()
+        txtStock = New TextBox()
         SuspendLayout()
         ' 
         ' Button_Exit
@@ -68,25 +70,41 @@ Partial Class Form2
         ' 
         ' txtNuevoProducto
         ' 
-        txtNuevoProducto.Location = New Point(37, 174)
+        txtNuevoProducto.Location = New Point(37, 162)
         txtNuevoProducto.Name = "txtNuevoProducto"
         txtNuevoProducto.Size = New Size(158, 23)
         txtNuevoProducto.TabIndex = 5
         ' 
         ' Button_Borrar
         ' 
-        Button_Borrar.Location = New Point(37, 218)
+        Button_Borrar.Location = New Point(37, 295)
         Button_Borrar.Name = "Button_Borrar"
         Button_Borrar.Size = New Size(158, 38)
         Button_Borrar.TabIndex = 6
         Button_Borrar.Text = "Borrar"
         Button_Borrar.UseVisualStyleBackColor = True
         ' 
+        ' txtPrecio
+        ' 
+        txtPrecio.Location = New Point(37, 209)
+        txtPrecio.Name = "txtPrecio"
+        txtPrecio.Size = New Size(158, 23)
+        txtPrecio.TabIndex = 7
+        ' 
+        ' txtStock
+        ' 
+        txtStock.Location = New Point(37, 257)
+        txtStock.Name = "txtStock"
+        txtStock.Size = New Size(158, 23)
+        txtStock.TabIndex = 8
+        ' 
         ' Form2
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(txtStock)
+        Controls.Add(txtPrecio)
         Controls.Add(Button_Borrar)
         Controls.Add(txtNuevoProducto)
         Controls.Add(Button_Agregar)
@@ -104,4 +122,6 @@ Partial Class Form2
     Friend WithEvents Button_Agregar As Button
     Friend WithEvents txtNuevoProducto As TextBox
     Friend WithEvents Button_Borrar As Button
+    Friend WithEvents txtPrecio As TextBox
+    Friend WithEvents txtStock As TextBox
 End Class
