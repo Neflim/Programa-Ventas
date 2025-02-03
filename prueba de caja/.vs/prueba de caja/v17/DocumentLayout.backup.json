@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|c:\\users\\ezequ\\documents\\programas\\prueba de caja\\prueba de caja\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|solutionrelative:prueba de caja\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|c:\\users\\ezequ\\documents\\programas\\prueba de caja\\prueba de caja\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|solutionrelative:prueba de caja\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|c:\\users\\ezequ\\documents\\programas\\prueba de caja\\prueba de caja\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|solutionrelative:prueba de caja\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|c:\\users\\ezequ\\documents\\programas\\prueba de caja\\prueba de caja\\formcaja.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|solutionrelative:prueba de caja\\formcaja.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|c:\\users\\ezequ\\documents\\programas\\prueba de caja\\prueba de caja\\formcaja.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|solutionrelative:prueba de caja\\formcaja.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|c:\\users\\ezequ\\documents\\programas\\prueba de caja\\prueba de caja\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{29A8771F-5D79-4E78-A9F6-740C15129772}|prueba de caja\\prueba de caja.vbproj|solutionrelative:prueba de caja\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormCaja.vb",
+              "DocumentMoniker": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\FormCaja.vb",
+              "RelativeDocumentMoniker": "prueba de caja\\FormCaja.vb",
+              "ToolTip": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\FormCaja.vb",
+              "RelativeToolTip": "prueba de caja\\FormCaja.vb",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAIwBMAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-03T00:57:10.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormCaja.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\FormCaja.vb",
+              "RelativeDocumentMoniker": "prueba de caja\\FormCaja.vb",
+              "ToolTip": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\FormCaja.vb [Dise\u00F1o]",
+              "RelativeToolTip": "prueba de caja\\FormCaja.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-03T00:43:40.102Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form2.vb",
+              "DocumentMoniker": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\Form2.vb",
+              "RelativeDocumentMoniker": "prueba de caja\\Form2.vb",
+              "ToolTip": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\Form2.vb",
+              "RelativeToolTip": "prueba de caja\\Form2.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-02T22:17:43.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form2.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\Form2.vb",
+              "RelativeDocumentMoniker": "prueba de caja\\Form2.vb",
+              "ToolTip": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\Form2.vb [Dise\u00F1o]",
+              "RelativeToolTip": "prueba de caja\\Form2.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-02T22:12:46.351Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.vb",
+              "DocumentMoniker": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\Form1.vb",
+              "RelativeDocumentMoniker": "prueba de caja\\Form1.vb",
+              "ToolTip": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\Form1.vb",
+              "RelativeToolTip": "prueba de caja\\Form1.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-02T22:08:24.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\Form1.vb",
+              "RelativeDocumentMoniker": "prueba de caja\\Form1.vb",
+              "ToolTip": "C:\\Users\\ezequ\\Documents\\programas\\prueba de caja\\prueba de caja\\Form1.vb [Dise\u00F1o]",
+              "RelativeToolTip": "prueba de caja\\Form1.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-02T21:57:17.422Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

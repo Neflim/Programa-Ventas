@@ -1,0 +1,18 @@
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\bin\Debug\net8.0-windows\prueba de caja.exe
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\bin\Debug\net8.0-windows\prueba de caja.deps.json
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\bin\Debug\net8.0-windows\prueba de caja.runtimeconfig.json
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\bin\Debug\net8.0-windows\prueba de caja.dll
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\bin\Debug\net8.0-windows\prueba de caja.pdb
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba_de_caja.Form1.resources
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba de caja.vbproj.GenerateResource.cache
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba de caja.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba de caja.AssemblyInfoInputs.cache
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba de caja.AssemblyInfo.vb
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba de caja.vbproj.CoreCompileInputs.cache
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba de caja.dll
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\refint\prueba de caja.dll
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba de caja.pdb
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba de caja.genruntimeconfig.cache
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\ref\prueba de caja.dll
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba_de_caja.Form2.resources
+C:\Users\ezequ\Documents\programas\prueba de caja\prueba de caja\obj\Debug\net8.0-windows\prueba_de_caja.FormCaja.resources
